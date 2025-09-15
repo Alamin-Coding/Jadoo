@@ -3,3 +3,30 @@
  @plugin "daisyui" {
    themes: light --default, dark --prefersdark;
  }
+
+ @utility container {
+  padding-inline: 1rem;
+  margin-inline: auto;
+}
+
+@layer base {
+  body {
+    background: #ffffff;
+  }
+}
+
+@theme {
+
+  /* Colors */
+  --color-heading: #181E4B;
+  --color-paragraph: #5E6282;
+  --color-yellow: #F1A501;
+  --color-orange: #DF6951;
+
+  /* breakpoint */
+    --breakpoint-*: initial;
+  --breakpoint-sm: 40rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 64rem;
+  --breakpoint-xl: 74.5rem;
+}
