@@ -1,8 +1,21 @@
+import { useRef } from "react";
 import { Link } from "react-router";
 
 const Navbar = () => {
+  const navbar = useRef(null)
+
+ window.addEventListener("scroll", ()=> {
+   const value = window.scrollY
+   if (value > 116) {
+    navbar.current.classList.add("stickyNavbar")
+   }else {
+    navbar.current.classList.remove("stickyNavbar")
+   }
+   
+ })
+  
   return (
-    <nav className="fixed w-full">
+    <nav className="fixed w-full " ref={navbar}>
     <div className="navbar py-12 container">
       <div className="navbar-start">
         <div className="dropdown">
