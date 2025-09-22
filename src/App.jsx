@@ -4,6 +4,7 @@ import MainLayout from "./layout/MainLayout";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
+import Desitnations from "./pages/Desitnations";
 
 const router = createBrowserRouter([
   {
@@ -12,6 +13,7 @@ const router = createBrowserRouter([
     children: [
       {index: true, Component: Home},
       {path: "/about", Component: About},
+      {path: "/desitnations", Component: Desitnations},
       {path: "*", Component: NotFound},
     ]
   }

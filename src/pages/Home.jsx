@@ -16,15 +16,18 @@ import {
   MediaMuteButton,
   MediaFullscreenButton,
 } from "media-chrome/react";
+import DestinationSection from '../components/sections/DestinationSection'
+import NextTripSection from '../components/sections/NextTripSection'
 
 const Home = () => {
   return (
     <>
       <Banner />
       <ServiceSection />
-      <Map />
-      <MediaPlayButton />
-      <ReactPlayer src='https://youtu.be/sYga7EYOQ0Q?si=YGXoUA_D3rMXuPu9' />
+      <DestinationSection />
+      <NextTripSection />
+      {/* <MediaPlayButton /> */}
+      {/* <ReactPlayer src='https://youtu.be/sYga7EYOQ0Q?si=YGXoUA_D3rMXuPu9' /> */}
     </>
   )
 }
