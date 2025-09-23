@@ -60,20 +60,20 @@ const Navbar = () => {
                 </NavLink>
               </li>
               <li>
-                <Link
+                <NavLink
                   className="font-medium text-[17px] text-heading"
                   to={"/hotels"}
                 >
                   Hotels
-                </Link>
+                </NavLink>
               </li>
               <li>
-                <Link
+                <NavLink
                   className={activeStyle}
                   to={"/flights"}
                 >
                   Flights
-                </Link>
+                </NavLink>
               </li>
               <li>
                 <NavLink
