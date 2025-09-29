@@ -21,11 +21,13 @@ import NextTripSection from "../components/sections/NextTripSection";
 import TestimonialsSection from "../components/sections/TestimonialsSection";
 import BrandSection from "../components/sections/BrandSection";
 import SubscribeSection from "../components/sections/SubscribeSection";
+import { useAuth } from "../hooks/useAuth";
 
 
 const Home = () => {
 
-  
+    const {currentUser} = useAuth();
+    console.log(currentUser);
   return (
     <>
       <Banner />

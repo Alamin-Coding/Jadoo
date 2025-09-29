@@ -1,14 +1,18 @@
+
+import { AiOutlineLogout } from "react-icons/ai";
 import { useRef } from "react";
 import { Link, NavLink } from "react-router";
+import { useAuth } from "../hooks/useAuth";
 
 const Navbar = () => {
+  const { currentUser, logout } = useAuth()
   const navbar = useRef(null);
   const activeStyle = ({ isActive, isPending, isTransitioning }) =>
-                    [
-                      isPending ? "pending" : "",
-                      isActive ? "font-medium text-[17px] text-red-500" : "font-medium text-[17px] text-heading",
-                      isTransitioning ? "transitioning" : "",
-                    ].join(" ")
+    [
+      isPending ? "pending" : "",
+      isActive ? "font-medium text-[17px] text-red-500" : "font-medium text-[17px] text-heading",
+      isTransitioning ? "transitioning" : "",
+    ].join(" ")
 
   window.addEventListener("scroll", () => {
     const value = window.scrollY;
@@ -126,25 +130,53 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end space-x-2">
-          <Link
-            to={"/auth/login"}
-            className="btn bg-transparent border-[1px] border-transparent hover:border hover:border-black"
-          >
-            Login
-          </Link>
-          <Link
-            to={"/auth/signup"}
-            className="btn bg-transparent border-[1px] border-transparent hover:border hover:border-black"
-          >
-            Sign up
-          </Link>
-          <select
-            defaultValue="Server location"
-            className="bg-transparent select select-neutral w-16 border-0"
-          >
-            <option>EN</option>
-            <option>BN</option>
-          </select>
+          {!currentUser ? (
+            <>
+              <Link
+                to={"/auth/login"}
+                className="btn bg-transparent border-[1px] border-transparent hover:border hover:border-black"
+              >
+                Login
+              </Link>
+              <Link
+                to={"/auth/signup"}
+                className="btn bg-transparent border-[1px] border-transparent hover:border hover:border-black"
+              >
+                Sign up
+              </Link>
+              <select
+                defaultValue="Server location"
+                className="bg-transparent select select-neutral w-16 border-0"
+              >
+                <option>EN</option>
+                <option>BN</option>
+              </select>
+            </>
+          ) : (
+            <>
+
+              <div className="dropdown dropdown-end">
+                <div tabIndex={0} className=" m-1">
+                  <div className="avatar ml-3">
+                    <div className="ring-primary ring-offset-base-100 w-8 rounded-full ring-2 ring-offset-2">
+                      <img src="https://img.daisyui.com/images/profile/demo/spiderperson@192.webp" />
+                    </div>
+                  </div>
+                </div>
+                <div tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-1 w-40 p-2 shadow-sm">
+                  <div className="flex items-center gap-2 cursor-pointer" onClick={logout}>
+                    <button >
+                      <AiOutlineLogout className="text-red-500" />
+                    </button>
+                    <span>Logout</span>
+                  </div>
+                </div>
+              </div>
+            </>
+          )}
+
+          {/* Avatar */}
+
         </div>
       </div>
     </nav>
