@@ -22,7 +22,10 @@ import TestimonialsSection from "../components/sections/TestimonialsSection";
 import BrandSection from "../components/sections/BrandSection";
 import SubscribeSection from "../components/sections/SubscribeSection";
 
+
 const Home = () => {
+
+  
   return (
     <>
       <Banner />

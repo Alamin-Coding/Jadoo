@@ -127,13 +127,13 @@ const Navbar = () => {
         </div>
         <div className="navbar-end space-x-2">
           <Link
-            to={"/login"}
+            to={"/auth/login"}
             className="btn bg-transparent border-[1px] border-transparent hover:border hover:border-black"
           >
             Login
           </Link>
           <Link
-            to={"/signup"}
+            to={"/auth/signup"}
             className="btn bg-transparent border-[1px] border-transparent hover:border hover:border-black"
           >
             Sign up
