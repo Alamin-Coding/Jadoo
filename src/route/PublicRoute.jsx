@@ -15,10 +15,6 @@ const PublicRoute = ({children}) => {
         return <Navigate to={"/"} state={{from: location}} replace />
     }
     
-    // If user exists but email is NOT verified, redirect to login
-    if (currentUser && currentUser.emailVerified === false) {
-        return <Navigate to={"/auth/login"} state={{from: location}} replace />
-    }
   
     // If no user, allow access to public route
     return children

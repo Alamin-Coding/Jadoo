@@ -10,6 +10,7 @@ import AuthLayout from "./layout/AuthLayout";
 import Login from "./pages/auth/Login";
 import Signup from "./pages/auth/Signup";
 import ProtectedRoute from "./route/ProtectedRoute";
+import ProfilePage from "./pages/ProfilePage";
 
 const router = createBrowserRouter([
   {
@@ -39,6 +40,8 @@ const router = createBrowserRouter([
       {index: true, Component: Home},
       {path: "about", Component: About},
       {path: "desitnations", Component: Desitnations},
+      {path: "profile", Component: ProfilePage},
+      
     ]
   },
 
